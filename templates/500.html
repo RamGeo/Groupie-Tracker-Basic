@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/error.css">
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <title>404 - Page Not Found</title>
+</head>
+<body>
+    <div class="error-container">
+        <div class="text">
+            <h1>ERROR</h1>
+            <h1>500</h1>
+            <div class="error-subtitle">Internal Server Error</div>
+            <div class="error-message">Oops! Something went wrong on our end.</div>
+        </div>
+        
+        <div class="astronaut">
+            <img src="/static/astronauterror.png" alt="Astronaut">
+        </div>
+        
+        <div class="button-container">
+            <a href="/">
+                <button type="button" class="home-button">Home</button>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Groupie Tracker. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        console.error("404 Error: Page not found");
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="/static/error.js"></script>
+</body>
+</html>

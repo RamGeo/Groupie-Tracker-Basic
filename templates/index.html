@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie Tracker</title>
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="hidden">
+    <!-- Intro Section -->
+    <div class="intro">
+        <h1>Groupie Tracker</h1>
+        <div class="intro-content">
+            <img src="/static/radio.png" alt="Intro Animation" class="intro-img">
+            <div class="intro-text">
+                <p>Welcome to Groupie Tracker!! Your ultimate destination for discovering artists, exploring their music, and tracking their tour dates—all in one place! Click on an artist to uncover their journey, upcoming shows, and more.  🎵⭐</p>
+                <div class="button-container">
+                    <a href="/">
+                        <button type="button" class="home-button">Home</button>
+                    </a>
+                    <a href="/aboutus">
+                        <button type="button" class="about-us-button">About Us</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Scroll Down Button with GIF -->
+    <button id="scrollButton" class="scroll-down-button">
+        <img src="/static/scroll.gif" alt="Scroll Down" class="scroll-gif">
+    </button>
+
+    <div class="search-bar-container">
+        <i class="search-icon"></i>
+        <input type="text" id="search-bar" class="search-bar" placeholder="Search..." />
+    </div>
+    
+    <!-- This is where the suggestions will appear -->
+    <div id="suggestions" class="suggestions-box"></div>
+    
+    
+    
+
+    <div class="container">
+        <div class="data-section">
+            <div class="data-list">
+                {{range .}}
+                <div class="data-item" 
+                    onclick="openModal('{{.Name}}', '{{.Image}}', '{{join .Members `, `}}', '{{.FirstAlbum}}', '{{.CreationDate}}', '{{json .Relations.DatesLocations | html}}', '{{.Locations}}', '{{join .Dates `, `}}')"
+                    data-full-name="Rihanna Robyn Rihanna Fenty"
+                    data-members="{{join .Members `, `}}"
+                    data-creation-date="{{.CreationDate}}"
+                    data-locations="{{join .Locations `, `}}"
+                    data-first-album="{{.FirstAlbum}}"
+                    data-concert-dates="{{join .Dates `, `}}"
+                >
+                    <img src="{{.Image}}" alt="{{.Name}}" class="artist-image">
+                    <h3>{{.Name}}</h3>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <div class="modal-title-container">
+                <h2 id="modal-title" class="modal-title"></h2>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Left Side -->
+                <div class="modal-left">
+                    <div class="vinyl-record">
+                        <img id="modal-image" src="" alt="Artist Image">
+                    </div>
+                    <div class="accordion-header">Members</div>
+                    <div class="members-content">
+                        <div id="modal-members"></div>
+                    </div>
+                </div>
+
+                <!-- Right Side -->
+                <div class="modal-right">
+                    <div class="accordion-item">
+                        <div class="accordion-header">First Album</div>
+                        <div class="accordion-content">
+                            <div id="modal-first-album"></div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">Creation Date</div>
+                        <div class="accordion-content">
+                            <div id="modal-creation-date"></div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">Locations</div>
+                        <div class="accordion-content">
+                            <div id="modal-locations"></div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">Dates</div>
+                        <div class="accordion-content">
+                            <div id="modal-dates"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">Concert Dates</div>
+                        <div class="accordion-content">
+                            <div id="modal-tour-dates"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/modal.js"></script>
+    <script src="/static/console.js"></script>
+    <script src="/static/search.js"></script>
+    <script>
+        // Ensure the code runs after the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Set the year in the footer
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            const scrollAmount = 500; // Adjust this value to control the scroll amount
+
+            // Add scroll functionality for the button
+            document.getElementById("scrollButton").addEventListener("click", function() {
+                window.scrollBy({
+                    top: scrollAmount,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Groupie Tracker. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1152 @@
+/* Basic styles */
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Modak, sans-serif;
+    background-color: rgb(224, 224, 249);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    font-size: 7vw;
+    color: #8682ff;
+    font-style: normal;
+    font-weight: 50;
+    text-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.6),
+        -2px -2px 0 rgba(0, 0, 0, 0.6),
+        2px -2px 0 rgba(0, 0, 0, 0.6),
+        -2px 2px 0 rgba(0, 0, 0, 0.6);
+    padding-top: 20px;
+}
+
+p {
+    font-family: Vollkorn, sans-serif;
+    font-size: 1.0em;
+    color: #4a1634;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: transparent;
+}
+
+.data-section {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.data-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.data-item {
+    font-size: 16px;
+    font-family: Vollkorn, sans-serif;
+    color: #3D1A6C;
+    background-color: #b6b4fd;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 20vw;
+    box-shadow: 0 2px 5px rgba(141, 7, 7, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s, color 0.3s;
+}
+
+.data-item:hover {
+    transform: scale(1.05) rotate(-3deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    border: 2px solid #000000;
+    opacity: 0.9;
+    color: black;
+}
+
+.artist-image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+.scroll-down-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.scroll-down-button:hover {
+    transform: scale(1.1) translateY(5px);
+}
+
+.scroll-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
+.scroll-gif:hover {
+    opacity: 1;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.intro-img {
+    width: 40vw;
+    height: auto;
+}
+
+.intro-text {
+    text-align: center;
+    max-height: 300px;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 1.5vw;
+}
+
+body.hidden .main-content {
+    display: none;
+}
+
+body.visible .main-content {
+    display: block;
+}
+
+/* The modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    padding-top: 60px;
+    overflow: auto;
+    animation: fadeIn 0.5s;
+    font-family: sans-serif;
+}
+
+/* Modal content */
+.modal-content {
+    background: rgb(224, 224, 249);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.modal-title-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.modal-title {
+    color: #4b1533;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.modal-body {
+    display: flex;
+    gap: 25px;
+}
+
+.modal-left {
+    flex: 0 0 40%;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-right {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+/* Vinyl record styling */
+.vinyl-record {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 40px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 5s linear infinite;
+    margin-bottom: 20px;
+}
+
+.modal-content img {
+    max-width: 150px;
+    max-height: 150px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+/* Members section styling */
+.modal-left .accordion-header {
+    background: rgba(134, 130, 255, 0.5);
+    color: #4b1533;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.modal-left .accordion-header::after {
+    content: '▼';
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+    font-size: 1em;
+    font-weight: bold;
+    opacity: 0.7;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-left .accordion-header.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.members-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.member-item {
+    padding: 8px 12px;
+    color: #4b1533;
+    font-family: 'Vollkorn', serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Right side accordion styling */
+.modal-right .accordion-header {
+    background: rgba(134, 130, 255, 0.5);
+    color: #4b1533;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.modal-right .accordion-header:hover {
+    background: rgba(134, 130, 255, 0.7);
+}
+
+.modal-right .accordion-header::after {
+    content: '▼';
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+    font-size: 1em;
+    font-weight: bold;
+    opacity: 0.7;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-right .accordion-header.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    color: #4b1533;
+    font-family: 'Vollkorn', serif;
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Close button styling */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4b1533;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* Item styling */
+.member-item,
+.location-item,
+.tour-date {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Vollkorn', serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #4b1533;
+}
+
+.member-item:hover,
+.location-item:hover,
+.tour-date:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-header h2 {
+    margin-left: 0;
+    text-align: center;
+    top: 0;
+    font-size: 2em; /* Adjust this value to change the title size */
+    color: #ffffff;
+    animation: fadeInScale 1s ease-in-out; /* Apply the animation */
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+  
+.modal-members {
+    margin-top: auto; /* Pushes the element to the bottom */
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-top: 1px solid #444;
+    position: relative;
+}
+
+
+/* Intro Section */
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Make the GIF larger */
+.intro-img {
+    width: 40vw; /* Adjust size */
+    height: auto;
+}
+
+/* Style the introduction text */
+.intro-text {
+    text-align: center;
+    max-height: 300px;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 1.5vw;
+}
+
+.intro .intro-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.intro .intro-image {
+    max-width: 100px; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space between the image and text */
+}
+
+@keyframes introAnimation {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden; /* Ensures the intro is hidden after animation */
+    }
+}
+
+/* Hide main content initially */
+body.hidden .main-content {
+    display: none;
+}
+
+body.visible .main-content {
+    display: block;
+}
+
+/* Updated About Us Button */
+.about-us-button {
+    background-color: #6A1B9A; /* Purple background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the link block-level */
+    font-size: 16px; /* Increase the font size */
+    margin: 10px 2px; /* Add some margin */
+    cursor: pointer; /* Add a pointer on hover */
+    border-radius: 25px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    font-family: Vollkorn, sans-serif;
+
+}
+
+.about-us-button:hover {
+    background-color: #4A148C; /* Darker purple background on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Updated Home Button */
+.home-button {
+    background-color: #6A1B9A; /* Lighter purple background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the link block-level */
+    font-size: 16px; /* Increase the font size */
+    margin: 10px 2px; /* Add some margin */
+    cursor: pointer; /* Add a pointer on hover */
+    border-radius: 25px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    font-family: Vollkorn, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+
+}
+
+.home-button:hover {
+    background-color: #4A148C; /* Darker purple background on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+
+/* Focused effect for better accessibility */
+.home-button:focus,
+.about-us-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0px 0px 8px 4px rgba(235, 125, 211, 0.7); /* Highlight with green outline */
+}
+
+/* Active effect (when clicked) */
+.home-button:active,
+.about-us-button:active {
+    transform: scale(0.98); /* Slightly scale down */
+    background-color: #f590f0; /* Darker green */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Add some icon or text-shadow effect */
+.home-button,
+.about-us-button {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Light shadow to make the text stand out */
+}
+
+/* Optional: Glow effect on hover for a cool modern feel */
+.home-button:hover,
+.about-us-button:hover {
+    box-shadow: 0 0 10px 2px rgba(235, 125, 211, 0.8); /* Green glow */
+}
+
+
+/* Accordion Styles */
+.accordion {
+    width: 100%;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #e6e6fa;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #d1d1f7;
+}
+
+/* Optional: Add an indicator to show it's clickable */
+.accordion-header::after {
+    content: '▼';
+    float: right;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Rotate the indicator when section is open */
+.accordion-header.active::after {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0;
+}
+
+.accordion-content.active {
+    padding: 15px;
+}
+
+/* Style for the content inside accordion */
+.accordion-content p,
+.accordion-content div,
+.accordion-content ul {
+    color: #4b1533;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Ensure tour dates do not wrap */
+.tour-date {
+    white-space: nowrap;
+    min-width: fit-content; /* Adjust width to content */
+}
+
+
+.tour-date:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure modal content is properly scrollable */
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal-body {
+    margin-top: 20px;
+}
+
+.location-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Vollkorn', serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #4b1533;
+}
+
+.location-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Common grid container style for members, locations, and tour dates */
+.member-list,
+.location-list,
+#modal-tour-dates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 5px;
+}
+
+/* Member items styling */
+.member-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Vollkorn', serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #4b1533;
+}
+
+.member-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Tour dates styling */
+.tour-date {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Vollkorn', serif;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #4b1533;
+}
+
+.tour-date:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tour-date-error {
+    text-align: center;
+    padding: 20px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+}
+
+/* Accordion content adjustments */
+.accordion-content.active {
+    padding: 20px;
+    max-height: 400px; /* Increased to show more content */
+    overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.accordion-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.accordion-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.accordion-content::-webkit-scrollbar-thumb {
+    background: #8682ff;
+    border-radius: 4px;
+}
+
+.accordion-content::-webkit-scrollbar-thumb:hover {
+    background: #7a76ff;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Vollkorn', serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #4b1533;
+}
+
+.info-item strong {
+    margin-right: 8px;
+    color: #8682ff;
+}
+
+/* Update modal content max-width for better layout */
+.modal-content {
+    max-width: 900px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+/* Ensure accordion items stack properly */
+.accordion-item {
+    margin-bottom: 15px;
+}
+
+/* Make sure the content doesn't overflow */
+.accordion-content {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.location-list {
+    list-style: none;
+    padding: 0;
+}
+
+.location-item {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    color: #4b1533;
+}
+
+.location-item:last-child {
+    border-bottom: none;
+}
+
+.date-item {
+    padding: 8px;
+    margin: 4px 0;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.accordion-content {
+    background-color: #e6e6fa;
+    padding: 15px;
+    display: block;
+    border-radius: 0 0 4px 4px;
+}
+
+#modal-dates {
+    background-color: #e6e6fa;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.date-item {
+    background-color: #e6e6fa;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+}
+
+.modal .accordion-content .tour-date {
+    white-space: nowrap; /* Prevent line breaks within the tour date */
+}
+
+/* Update the tour dates container and item styling */
+#modal-tour-dates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column width */
+    gap: 10px;
+    padding: 5px;
+    width: 100%;
+    justify-content: space-between; /* Spread items across available space */
+}
+
+.tour-date {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Vollkorn', serif;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #4b1533;
+    white-space: nowrap;
+    min-width: fit-content; /* Adjust width to content */
+}
+
+/* Update accordion content to handle overflow properly */
+.accordion-content {
+    background-color: #e6e6fa;
+    padding: 15px;
+    display: block;
+    border-radius: 0 0 4px 4px;
+    width: 100%;
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 600px) {
+    #modal-tour-dates {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Mobile responsiveness */ 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 8vw; /* Adjust heading size */
+        padding-top: 10px;
+    }
+
+    .intro {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .intro-img {
+        width: 60vw; /* Scale down image size */
+        height: auto;
+    }
+
+    .intro-text {
+        font-size: 3vw; /* Adjust font size for smaller screens */
+        padding: 15px;
+        max-height: none;
+        max-width: 100%;
+    }
+
+    .data-list {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .data-item {
+        max-width: 90%; /* Adjust the max-width for mobile */
+        font-size: 14px; /* Decrease font size */
+        padding: 12px;
+        box-shadow: none;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .modal-left, .modal-right {
+        flex: 1;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .accordion-header {
+        font-size: 14px; /* Reduce header font size */
+        padding: 10px;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+
+    /* Adjust the vinyl record */
+    .vinyl-record {
+        width: 120px; /* Smaller vinyl record */
+        height: 120px;
+        border-radius: 50%;
+        border: 20px solid black;
+    }
+
+    .scroll-down-button {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Accordion content in modal */
+    .accordion-content {
+        padding: 12px;
+        max-height: 200px; /* Ensure it's scrollable */
+    }
+
+    /* Ensure all buttons look good on mobile */
+    .about-us-button, .home-button {
+        width: 80%;
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 12px 0;
+        margin: 10px 0;
+    }
+
+    .modal-header h2 {
+        font-size: 1.8em; /* Reduce title size */
+    }
+
+    .location-item, .member-item {
+        font-size: 12px; /* Reduce font size */
+        padding: 8px;
+    }
+}
+
+/* For very small mobile screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .intro-img {
+        width: 80vw; /* Larger image for very small screens */
+    }
+
+    .intro-text {
+        font-size: 4vw; /* Even smaller font size */
+        padding: 12px;
+    }
+
+    .data-item {
+        max-width: 100%; /* Make data items full-width */
+    }
+
+    .scroll-down-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .modal-title {
+        font-size: 2em; /* Smaller modal title */
+    }
+
+    .accordion-header {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .accordion-content {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .home-button, .about-us-button {
+        width: 90%;
+        font-size: 13px;
+    }
+}
+
+/* Search Bar Container */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 50px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Search Icon */
+.search-icon {
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    size: 1.5rem;
+}
+
+.search-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Search Bar Input */
+.search-bar {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: #e9e9e9;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+/* Change Background Color and Border on Focus */
+.search-bar:focus {
+    background: rgba(204, 153, 255, 0.1);  /* Light Purple with very low opacity */
+    border: 2px solid #8682ff;
+    box-shadow: 0 0 8px rgba(134, 130, 255, 0.5);
+}
+
+/* Add Search Icon inside the Input Field */
+.search-bar:focus ~ .search-icon {
+    color: #8682ff;
+}
+
+/* Search Bar Container with Icon */
+.search-bar-container .search-bar {
+    padding-left: 40px;
+    background: url('/static/searchicon3.png') no-repeat 10px center;
+    background-size: 20px;
+}
+
+/* Hover effect for the whole container */
+.search-bar-container:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Suggestions Box */
+.suggestions-box {
+    position: absolute;
+    top: 110%;  /* Increased distance from the search bar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 480px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    margin-top: 10px; /* Space between the search bar and suggestions box */
+    font-family: 'Vollkorn', sans-serif;
+    border: 2px solid #e0e0e0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Individual Suggestion Item */
+.suggestion-item {
+    padding: 12px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #444;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease, padding-left 0.2s ease;
+}
+
+/* Hover effect on suggestion */
+.suggestion-item:hover {
+    background-color: #8682ff;
+    color: white;
+    padding-left: 30px;
+}
+
+/* Suggestion Text */
+.suggestion-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Suggestion Type (small badge next to suggestion) */
+.suggestion-type {
+    font-size: 0.85em;
+    padding: 4px 10px;
+    background: rgba(134, 130, 255, 0.3);
+    border-radius: 20px;
+    margin-left: 10px;
+    color: #8682ff;
+    font-weight: 600;
+}
+
+/* Hover effect on suggestion type */
+.suggestion-item:hover .suggestion-type {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* Show the suggestions box with slight opacity fade */
+.suggestions-box.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px);
+}
+

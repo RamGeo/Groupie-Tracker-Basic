@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Modak, sans-serif;
+    background-color: rgb(224, 224, 249);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 10px;
+    margin
+}
+
+h1 {
+    font-size: 7vw;
+    color: #8682ff;
+    font-style: normal;
+    font-weight: 50;
+    text-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.6),
+        -2px -2px 0 rgba(0, 0, 0, 0.6),
+        2px -2px 0 rgba(0, 0, 0, 0.6),
+        -2px 2px 0 rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-section {
+    flex: 1;
+    padding: 20px 0;
+    font-family: Vollkorn, sans-serif;
+    color: #3D1A6C;
+    transition: transform 0.3s;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.text-section:hover {
+    transform: scale(1.01);
+}
+
+.text-section p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    padding-right: 10px;
+}
+
+.text-section ul {
+    margin: 15px 0;
+    padding-left: 0;
+}
+
+.text-section li {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.image-section {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.home-button {
+    background-color: #6A1B9A;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: Vollkorn, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.home-button:hover {
+    background-color: #4A148C;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 2px rgba(235, 125, 211, 0.8);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-family: Vollkorn, sans-serif;
+    color: #4a1634;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+    
+    .image-section {
+        flex: 0 0 100%;
+    }
+    
+    h1 {
+        font-size: 10vw;
+    }
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    margin-top: -70px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-label {
+    font-size: 1.5em;
+    font-family: Vollkorn, sans-serif;
+    color: #4a1634;
+}
+
+.social-icons img {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px; /* Ensure the icons are square */
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+@media (max-width: 200px) {
+    .icons a {
+        margin-right: 8px;
+    }
+    .icons img {
+        width: 18px;
+        height: 18px;
+    }
+}

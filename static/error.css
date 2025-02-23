@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Modak', sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #9B6B9E, #A084DC, #BFACE2, #B4B4EF);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.error-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.error-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  font-size: clamp(2rem, 10vw, 7rem);
+  font-family: Modak;
+  color: #8682ff;
+  font-weight: 50;
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, 0.6),
+    -2px -2px 0 rgba(0, 0, 0, 0.6),
+    2px -2px 0 rgba(0, 0, 0, 0.6),
+    -2px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+.error-subtitle {
+  font-family: Vollkorn, sans-serif;
+  font-size: clamp(1.2rem, 5vw, 3rem);
+  color: #4a1634;
+}
+
+.error-message {
+  font-family: Vollkorn, sans-serif;
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #4a1634;
+  margin-top: 10px;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  right: 0;
+  animation: starTwinkle 2s infinite linear;
+}
+
+@keyframes starTwinkle {
+  0% {
+    background: rgba(255,255,255,0.4);
+  }
+  25% {
+    background: rgba(255,255,255,0.8);
+  }
+  50% {
+    background: rgba(255,255,255,1);
+  }
+  75% {
+    background: rgba(255,255,255,0.8);
+  }
+  100% {
+    background: rgba(255,255,255,0.4);
+  }
+}
+
+.astronaut img {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 55%;
+  animation: astronautFly 6s infinite linear;
+}
+
+@keyframes astronautFly {
+  0% {
+    left: -100px;
+  }
+  25% {
+    top: 50%;
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(45deg);
+    top: 55%;
+  }
+  75% {
+    top: 60%;
+    transform: rotate(30deg);
+  }
+  100% {
+    left: 110%;
+    transform: rotate(45deg);
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.home-button {
+  background-color: #6A1B9A;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-family: Vollkorn, sans-serif;
+}
+
+.home-button:hover {
+  background-color: #4A148C;
+  transform: scale(1.05);
+}
+
+.home-button:focus {
+  outline: none;
+  box-shadow: 0px 0px 8px 4px rgba(235, 125, 211, 0.7);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #4a1634;
+  position: relative;
+  z-index: 1;
+  bottom: 0;
+}
+
+footer p {
+  font-size: 1em;
+  font-family: Vollkorn, sans-serif;
+}
